@@ -1,5 +1,7 @@
 import pandas as pd
 
+# json에서 필요한 정보만 추출하는 과정
+
 def convert_bbox(bbox,width,height):
     dw = 1.0 / width
     dh = 1.0 / height
