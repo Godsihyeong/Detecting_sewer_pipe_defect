@@ -3,10 +3,10 @@ import pandas as pd
 from tqdm import tqdm
 
 def df2txt(df, data, file_class, class_number):
-    df.reset_index(drop=True, inplace=True)  # index 재설정하고 기존 index 제거
+    df.reset_index(drop=True, inplace=True)                              # index 재설정하고 기존 index 제거
 
     folder_path = '{}_folder'.format(file_class)
-    current_directory = 'D:/sewer detect/valid_folder'
+    current_directory = 'D:/sewer detect/folder'                         # annotations 정보를 담은 txt 파일 저장할 경로 설정
 
     # 폴더 생성
     folder_path_full = os.path.join(current_directory, folder_path)
