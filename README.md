@@ -5,6 +5,7 @@
 </div>
 
 ## Abstract
+
 Sewer pipelines play a vital role in maintaining urban sanitation and public health, contributing to sustainable development. Early detection and maintenance of physical defects can reduce management costs and improve performance. Traditional CCTV inspections, consisting of two main stages: on-site video collection and office evaluation, face limitations such as technician fatigue and time consumption. To address these issues, a YOLO-based deep learning model for automated defect detection has been proposed. Using sewer pipeline interior images provided by AI Hub, this study classified eight defect types, including joint offsets, connector protrusions, and sediment deposits. The model achieved over 90% mAP accuracy (based on an IOU of 0.5) regardless of lighting and background noise. This technology is expected to enhance the efficiency of sewer maintenance, contributing to safer and more sustainable urban environments.
 
 ## Introduction
@@ -16,3 +17,9 @@ Sewer pipelines play a vital role in maintaining urban sanitation and public hea
 2022년 기준 총길이 16만 8,786km인 하수관로의 결함 발견을 위해 소요되는 시간과 기술자의 피로는 평가의 효율성에 부정적인 영향을 미칠 수 있다.(환경부, 2024). 최근 딥러닝 기술의 적용이 확대됨에 따라, 이러한 문제를 해결하기 위해 많은 연구자들이 컴퓨터 비전 기술을 이용한 자동화 접근 방식을 모색하고 있다[(임수현 et al., 2018)](https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002332399), [(Cheng et al., 2018)](https://www.sciencedirect.com/science/article/pii/S0926580518303273). 하지만 선행 연구의 경우는 Two stage detector로 추론 속도가 느려 실시간 탐지가 불가능하다는 한계가 존재한다.
 
 특히, ‘You Only Look Once (YOLO)’ 알고리즘은 개체 감지 기술 중 하나로, 고속 처리와 높은 정확도를 겸비해 실시간 하수관로 결함 탐지에 특히 적합하다[(Redmon, J. et al., 2016)](https://arxiv.org/abs/1506.02640). 따라서, 본 논문에서는 YOLOv8을 활용하여 하수관로의 결함을 탐지하는 시스템을 제안한다. 본 시스템은 이미지를 다운사이징하여 기존보다 학습 및 추론 속도를 증가시키며, 실시간 탐지를 통해 기존의 수동 검사 방식의 한계를 극복하고, 하수도 관리의 효율성과 정확성을 개선하는 혁신적인 접근 방식을 제시한다.
+
+## Methodology
+
+<div aling="center">
+  <img src="https://drive.google.com/uc?id=1vip5FNsdPhvMXYnOl3qEhkLUT1cMJFkw" width="500"/>
+</div>
