@@ -1,13 +1,18 @@
-# Detecting_sewer_pipe_defect
+# Development of a real-time sewer pipe defect detection algorithm using YOLO
 
-> "I wanted to detect defects in sewer pipelines using an `object detection model(YOLOv8)` and diagnose the `urgency` of sewer maintenance according to the standard manual for sewer pipeline and manhole inspection and condition rating criteria provided by the Ministry of Environment."
-> "It is expected that this will enable `efficient maintenance and management` of sewer pipelines."
+<div aling="center">
+  <img src="https://drive.google.com/uc?id=1imXeiCM30Tt7ayzGhTsozSrMdkZZ3OFm" width="500"/>
+</div>
 
-# 하수관로 결함 탐지
+## Abstract
+Sewer pipelines play a vital role in maintaining urban sanitation and public health, contributing to sustainable development. Early detection and maintenance of physical defects can reduce management costs and improve performance. Traditional CCTV inspections, consisting of two main stages: on-site video collection and office evaluation, face limitations such as technician fatigue and time consumption. To address these issues, a YOLO-based deep learning model for automated defect detection has been proposed. Using sewer pipeline interior images provided by AI Hub, this study classified eight defect types, including joint offsets, connector protrusions, and sediment deposits. The model achieved over 90% mAP accuracy (based on an IOU of 0.5) regardless of lighting and background noise. This technology is expected to enhance the efficiency of sewer maintenance, contributing to safer and more sustainable urban environments.
 
-> `객체 탐지 모델(YOLOv8)`을 활용하여 하수관로 내의 결함을 탐지하고, 환경부에서 제시하는 하수관로·맨홀 조사 및 상태등급 판단기준 표준매뉴얼에 따라 하수관로 `정비의 시급성`을 진단하고자 하였다.   
-> 이를 통해, `효율적인 하수관로의 유지보수 및 관리`가 가능할 것으로 기대된다.
+## Introduction
 
+하수도 시스템은 도시화 및 인구 밀집 지역의 지속 가능한 발전에 있어 중대한 역할을 수행해왔다. 이와 같은 하수도 시스템의 중요성을 인지하고, 지방 정부 및 자치 단체는 하수 시스템의 효율적 관리와 유지를 위하여 2024년에 2조 7,692억 원의 예산을 책정하였고 2023년 대비 5,567억 원(25%) 증가하였다[(환경부, 2024)](https://korea.kr/common/download.do?fileId=197628336&tblKey=GMN). 하수도 시스템의 진단과 유지 보수는 구조물의 문제를 신속히 발견·해결하여 성능을 개선하고 관리 비용을 절감하며, 안정성과 최적의 서비스 제공을 목적으로 한다.
 
-### Data
-> Data source : https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=data&dataSetSn=139
+현재 CCTV 검사는 하수도 시스템의 진단 및 유지 보수 과정에서 필수적인 도구로 인식되고 있다. 레이저 기반 시스템, 초음파 센서, 적외선 열상 카메라 등 다른 기술적 접근법과 비교하였을 때, CCTV 검사는 분석에 용이한 시각적 자료를 제공한다는 장점을 갖는다. CCTV 검사 과정은 비디오 수집과 사무실에서 훈련된 기술자에 의한 비디오 분석으로, 두 주요 단계로 구성된다.
+
+2022년 기준 총길이 16만 8,786km인 하수관로의 결함 발견을 위해 소요되는 시간과 기술자의 피로는 평가의 효율성에 부정적인 영향을 미칠 수 있다.(환경부, 2024). 최근 딥러닝 기술의 적용이 확대됨에 따라, 이러한 문제를 해결하기 위해 많은 연구자들이 컴퓨터 비전 기술을 이용한 자동화 접근 방식을 모색하고 있다[(임수현 et al., 2018)](https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002332399), [(Cheng et al., 2018)](https://www.sciencedirect.com/science/article/pii/S0926580518303273). 하지만 선행 연구의 경우는 Two stage detector로 추론 속도가 느려 실시간 탐지가 불가능하다는 한계가 존재한다.
+
+특히, ‘You Only Look Once (YOLO)’ 알고리즘은 개체 감지 기술 중 하나로, 고속 처리와 높은 정확도를 겸비해 실시간 하수관로 결함 탐지에 특히 적합하다[(Redmon, J. et al., 2016)](https://arxiv.org/abs/1506.02640). 따라서, 본 논문에서는 YOLOv8을 활용하여 하수관로의 결함을 탐지하는 시스템을 제안한다. 본 시스템은 이미지를 다운사이징하여 기존보다 학습 및 추론 속도를 증가시키며, 실시간 탐지를 통해 기존의 수동 검사 방식의 한계를 극복하고, 하수도 관리의 효율성과 정확성을 개선하는 혁신적인 접근 방식을 제시한다.
