@@ -24,7 +24,8 @@ Sewer pipelines play a vital role in maintaining urban sanitation and public hea
   <img src="https://drive.google.com/uc?id=1vip5FNsdPhvMXYnOl3qEhkLUT1cMJFkw" width="500"/>
 </div>
 
-### Dataset
+## Dataset
+전체 이미지 다운로드 [클릭](https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=&topMenu=&aihubDataSe=data&dataSetSn=139) 
 ```
 Sewerpipe
 ├── Dataset
@@ -41,10 +42,26 @@ Sewerpipe
     └── test
 ```
 
+## Result
+| mAP50 | Recall | Inference Time |
+|:-----:|:-----:|:-----:|
+| 0.7474 | 0.7001 | 11.1ms |
 
+**Optimal Parameters**
+| Batch size | Optimizer | Cos_lr | Pretrained | Background | Label Smoothing |
+|:------------:|:------------:|:------------:|:------------:|:------------:|:------------:|
+|     128    |    Adam    |    False   |    True    |      X     |     0.3    |
 
-
-
+## Paper information
+```bibtext
+@inproceedings{title={Development of a real-time sewer pipe defect detection algorithm using YOLO},
+author={Jo, Yeongjoo and Yeo, Sihyeong and Kim, Changwoo},
+booktitle={2024 공동학술발표회}
+year={2024},
+month={March},
+organization={Korean Society on Water Environment (한국물환경학회), Korean Society of Water & Wastewater (대한상하수도학회)},
+}
+```
 
 ## License
 This project is licensed under the Apache License 2.0. See the [LICENSE](LICENSE) file for details.
