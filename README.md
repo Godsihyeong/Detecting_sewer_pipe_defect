@@ -52,7 +52,7 @@ Sewerpipe
 |:------------:|:------------:|:------------:|:------------:|:------------:|:------------:|
 |     128    |    Adam    |    False   |    True    |      X     |     0.3    |
 
-## Paper information
+## Information
 ```bibtext
 @inproceedings{title={Development of a real-time sewer pipe defect detection algorithm using YOLO},
 author={Jo, Yeongjoo and Yeo, Sihyeong and Kim, Changwoo},
