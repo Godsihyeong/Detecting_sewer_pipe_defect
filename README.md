@@ -18,8 +18,33 @@ Sewer pipelines play a vital role in maintaining urban sanitation and public hea
 
 특히, ‘You Only Look Once (YOLO)’ 알고리즘은 개체 감지 기술 중 하나로, 고속 처리와 높은 정확도를 겸비해 실시간 하수관로 결함 탐지에 특히 적합하다[(Redmon, J. et al., 2016)](https://arxiv.org/abs/1506.02640). 따라서, 본 논문에서는 YOLOv8을 활용하여 하수관로의 결함을 탐지하는 시스템을 제안한다. 본 시스템은 이미지를 다운사이징하여 기존보다 학습 및 추론 속도를 증가시키며, 실시간 탐지를 통해 기존의 수동 검사 방식의 한계를 극복하고, 하수도 관리의 효율성과 정확성을 개선하는 혁신적인 접근 방식을 제시한다.
 
-## Methodology
+## Workflow
 
 <div aling="center">
   <img src="https://drive.google.com/uc?id=1vip5FNsdPhvMXYnOl3qEhkLUT1cMJFkw" width="500"/>
 </div>
+
+### Dataset
+```
+Sewerpipe
+├── Dataset
+    ├── train
+        ├── CC
+        ├── CL
+        ├── ...
+        └── ...
+    ├── val
+    └── test
+├── Dataset(+Background)
+    ├── train
+    ├── ...
+    └── test
+```
+
+
+
+
+
+
+## License
+This project is licensed under the Apache License 2.0. See the [LICENSE](LICENSE) file for details.
