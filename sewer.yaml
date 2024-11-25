@@ -1,0 +1,7 @@
+test: C:\Users\hs\Desktop\졸업논문\code\datasets_nonbackground\test
+train: C:\Users\hs\Desktop\졸업논문\code\datasets_nonbackground\train
+val: C:\Users\hs\Desktop\졸업논문\code\datasets_nonbackground\valid
+
+nc: 8
+
+names: ['BK', 'CC', 'CL', 'DS', 'JD', 'JF', 'LP', 'SD']
